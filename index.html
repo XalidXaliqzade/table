@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" name="name" id="name" placeholder="ad"> <br>
+        <input type="text" class="form-control" name="surname" id="surname" placeholder="soyad"><br>
+        <input type="text" class="form-control" name="home_name" id="home_name" placeholder="ata adi">
+      </div>
+
+      <input type="button" id="btn" class="btn btn-success" value="add">
+
+    </form>
+
+    <div>
+      <table class="table" id="table">
+        <tr class="tr">
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+
+      </table>
+    </div>
+
+
+
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("btn").addEventListener("click", function () {
+
+      
+        let table = document.getElementById("table");
+        let newROw = table.insertRow(table, length);
+        let tr1 = newROw.insertCell(0);
+        let tr2 = newROw.insertCell(1);
+        let tr3 = newROw.insertCell(2);
+
+        let name = document.getElementById("name").value;
+        let surname = document.getElementById("surname").value;
+        let home_name = document.getElementById("home_name").value;
+
+        tr1.innerHTML = name;
+        tr2.innerHTML = surname;
+        tr3.innerHTML = home_name;
+
+      })
+    })
+  </script>
+
+</body>
+
+</html>
