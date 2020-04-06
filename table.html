@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Ad"> <br>
+                <input type="text" class="form-control" name="surname" id="surname" placeholder="Soyad"><br>
+                <input type="text" class="form-control" name="home_name" id="home_name" placeholder="Ata adı">
+
+            </div>
+
+            <input type="button" id="btn" class="btn btn-success" value="Add">
+
+        </form>
+
+        <div>
+            <table class="table" id="table_1">
+                <tr class="tr">
+                    <th scope="col">AD</th>
+                    <th scope="col">Soyad</th>
+                    <th scope="col">Ata adı</th>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("btn").addEventListener("click", function () {
+
+                let name = document.getElementById("name").value;
+                let surname = document.getElementById("surname").value;
+                let home_name = document.getElementById("home_name").value;
+
+                let table = document.getElementById("table_1");
+
+                let tr = document.createElement("tr");
+
+                let td1 = document.createElement("td");
+                td1.innerHTML = name;
+
+                let td2 = document.createElement("td");
+                td2.innerHTML = surname;
+
+                let td3 = document.createElement("td");
+                td3.innerHTML = home_name;
+
+
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+
+                table.appendChild(tr);
+
+                document.getElementById("table_1").appendChild(table);
+
+
+
+
+
+
+
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>
